@@ -2,6 +2,7 @@ import 'hardhat-typechain'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
 import '@nomiclabs/hardhat-etherscan'
+import { formatGwei } from 'viem'
 
 export default {
   networks: {
@@ -44,6 +45,13 @@ export default {
     bnb: {
       url: `https://bsc-dataseed.binance.org/`,
     },
+    superseedSepolia: {
+      url: "https://sepolia.superseed.xyz",
+      chainId:  53302,
+      accounts: ['8bb2adf3359e987d219fc57623f31a7cc50a4f358e0c820d321aa2d732c77283'], // Private key from your account
+      from: '0x9161c3F363A498b6B3b097BDd13F424001d54a86', // Your Deployer Account
+      gasPrice: 300,
+    }
   },
   etherscan: {
     // Your API key for Etherscan
